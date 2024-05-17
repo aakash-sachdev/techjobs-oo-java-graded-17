@@ -18,6 +18,12 @@ public class Main {
 //            System.out.println(job);
 //        }
 
+
+//        Testing
+//        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        System.out.println(test_job.getPositionType().getValue());
+//        System.out.println(test_job.getPositionType());
+
     }
 
 }
