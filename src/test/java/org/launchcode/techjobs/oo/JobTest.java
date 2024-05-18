@@ -42,4 +42,49 @@ public class JobTest {
         assertFalse(test_job1.getId() == test_job2.getId());
 
     }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals(test_job.toString().startsWith(System.lineSeparator()),true);
+        assertEquals(test_job.toString().endsWith(System.lineSeparator()),true);
+
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String testJobString =  test_job.toString();
+
+        assertTrue(testJobString.contains("ID: " + test_job.getId()));
+        assertTrue(testJobString.contains("\nName: " + test_job.getName()));
+        assertTrue(testJobString.contains("\nEmployer: " + test_job.getEmployer().getValue()));
+        assertTrue(testJobString.contains("\nLocation: " + test_job.getLocation().getValue()));
+        assertTrue(testJobString.contains("\nPosition Type: " + test_job.getPositionType().getValue()));
+        assertTrue(testJobString.contains("\nCore Competency: " + test_job.getCoreCompetency().getValue()));
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        // Hard code
+        String test_data =  System.lineSeparator() +
+                "ID: " + test_job.getId() +
+                "\nName: " + "Product tester" + '\'' +
+                "\nEmployer: " + ("ACME") +
+                "\nLocation: " + ("Data not available") +
+                "\nPosition Type: " + ("Quality control")+
+                "\nCore Competency: " + "Persistence" +
+                System.lineSeparator() ;
+
+        String testJobString =  test_job.toString();
+        assertEquals(test_job.toString(), test_data);
+
+
+    }
+
+
 }

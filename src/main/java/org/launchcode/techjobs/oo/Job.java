@@ -93,4 +93,16 @@ public class Job {
     public int getId() {
         return id;
     }
-}
+
+    @Override
+    public String toString() {
+        return  System.lineSeparator() +
+                "ID: " + id +
+                "\nName: " + name + '\'' +
+                "\nEmployer: " + (employer != null && !employer.getValue().isEmpty() ? employer: "Data not available") +
+                "\nLocation: " + (location != null && !location.getValue().isEmpty() ? location: "Data not available") +
+                "\nPosition Type: " + (positionType != null && !positionType.getValue().isEmpty() ? positionType: "Data not available")+
+                "\nCore Competency: " + coreCompetency +
+                System.lineSeparator()  ;
+    }
+   }
