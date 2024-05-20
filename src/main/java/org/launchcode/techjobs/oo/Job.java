@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private int id;
@@ -96,13 +98,29 @@ public class Job {
 
     @Override
     public String toString() {
-        return  System.lineSeparator() +
+
+        return
+//                "\r" + "\n" +
+                System.lineSeparator() +
                 "ID: " + id +
-                "\nName: " + name + '\'' +
-                "\nEmployer: " + (employer != null && !employer.getValue().isEmpty() ? employer: "Data not available") +
-                "\nLocation: " + (location != null && !location.getValue().isEmpty() ? location: "Data not available") +
-                "\nPosition Type: " + (positionType != null && !positionType.getValue().isEmpty() ? positionType: "Data not available")+
-                "\nCore Competency: " + coreCompetency +
-                System.lineSeparator()  ;
+                "\n" +
+                "Name: " + name +
+                "\n" +
+                "Employer: " + (employer != null && !employer.getValue().isEmpty() ? employer : "Data not available") +
+                "\n" +
+                "Location: " + (location != null && !location.getValue().isEmpty() ? location : "Data not available") +
+                "\n" +
+                "Position Type: " + (positionType != null && !positionType.getValue().isEmpty() ? positionType : "Data not available") +
+                "\n" +
+                "Core Competency: " + coreCompetency +
+                System.lineSeparator();
+//                "\r" + "\n";
+
+
+//                "Name: " + name +
+//                "\nEmployer: " + (employer != null && !employer.getValue().isEmpty() ? employer: "Data not available") +
+//                "\nLocation: " + (location != null && !location.getValue().isEmpty() ? location: "Data not available") +
+//                "\nPosition Type: " + (positionType != null && !positionType.getValue().isEmpty() ? positionType: "Data not available")+
+//                "\nCore Competency: " + coreCompetency + System.lineSeparator();
     }
-   }
+}

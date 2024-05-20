@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -71,19 +73,31 @@ public class JobTest {
         Job test_job = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Hard code
+//        String test_data =  System.lineSeparator() +
+//                "ID: " + test_job.getId() +
+//                "\nName: " + "Product tester" + '\'' +
+//                "\nEmployer: " + ("ACME") +
+//                "\nLocation: " + ("Data not available") +
+//                "\nPosition Type: " + ("Quality control")+
+//                "\nCore Competency: " + "Persistence" +
+//                System.lineSeparator() ;
+
         String test_data =  System.lineSeparator() +
-                "ID: " + test_job.getId() +
-                "\nName: " + "Product tester" + '\'' +
-                "\nEmployer: " + ("ACME") +
-                "\nLocation: " + ("Data not available") +
-                "\nPosition Type: " + ("Quality control")+
-                "\nCore Competency: " + "Persistence" +
-                System.lineSeparator() ;
+                "ID: " + test_job.getId()+
+                "\n" +
+                "Name: " + "Product tester" +
+                "\n" +
+                "Employer: " + "ACME" +
+                "\n" +
+                "Location: " + "Data not available" +
+                "\n" +
+                "Position Type: " + "Quality control" +
+                "\n" +
+                "Core Competency: " + "Persistence"
+                + System.lineSeparator();
 
         String testJobString =  test_job.toString();
         assertEquals(test_job.toString(), test_data);
-
-
     }
 
 
